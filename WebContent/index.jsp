@@ -112,7 +112,7 @@
 							      <c:forEach items="${findNewsBigTop}" var="news">
 									<li>
 										<div class="slide">
-											<a href="${ctx}/newsFront/findoneNews?newsId=${news.newsId}"><img src="${ctx}/newsImgUp/${news.coverImgUrl}" alt="" width="610px" height="292px"/></a>
+											<a href="${ctx}/newsFront/findoneNews?newsId=${news.newsId}"><img src="${ctx}/newsImgUp/${news.coverImgUrl}" alt="" width="63%" height="auto"/></a>
 											<div class="caption">
 												<p class="title">${fn:substring(news.newsTitle, 0,25)} <c:if test="${fn:length(news.newsTitle)>25}">...</c:if></p>
 											
@@ -143,7 +143,7 @@
 							</script>
 						</div>
 
-						<div class="line_2" style="margin: 34px 0px 28px;"></div>
+						<div class="line_2" style="margin: 35px 15px 15px 0px;"></div>
 
 						<div class="block_home_col_1">
 							<c:set var="newsHonorList" value="${sessionScope.listNewsIndex1}"></c:set>
@@ -156,7 +156,7 @@
 
 									<div class="text">
 										<p class="title">
-											<a href="${ctx}/newsFront/findoneNews?newsId=${news.newsId}">${fn:substring(news.newsTitle, 0,25)} <c:if test="${fn:length(news.newsTitle)>25}">...</c:if></a>
+											<a href="${ctx}/newsFront/findoneNews?newsId=${news.newsId}">${fn:substring(news.newsTitle, 0,15)} <c:if test="${fn:length(news.newsTitle)>15}">...</c:if></a>
 										</p>
 										<div class="date">
 											<p>
@@ -170,7 +170,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="line_3" style="margin: 14px 0px 17px;"></div>
+								<div class="line_3" style="margin: 13px 15px 35px 0px;"></div>
 							</c:forEach>
 						</div>
 
@@ -186,7 +186,7 @@
 
 									<div class="text">
 										<p class="title">
-											<a href="${ctx}/newsFront/findoneNews?newsId=${news.newsId}">${fn:substring(news.newsTitle, 0,25)} <c:if test="${fn:length(news.newsTitle)>25}">...</c:if></a>
+											<a href="${ctx}/newsFront/findoneNews?newsId=${news.newsId}">${fn:substring(news.newsTitle, 0,15)} <c:if test="${fn:length(news.newsTitle)>15}">...</c:if></a>
 										</p>
 										<div class="date">
 											<p>
@@ -200,7 +200,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="line_3" style="margin: 14px 0px 17px;"></div>
+								<div class="line_3" style="margin: 13px 15px 35px 0px;"></div>
 							</c:forEach>
 						</div>
 						<div class="clearboth"></div>
@@ -221,45 +221,45 @@
 											<a href="${ctx}/newsFront/findoneNews?newsId=${news.newsId}">${fn:substring(news.newsTitle, 0,15)}<c:if test="${fn:length(news.newsTitle)>15}">...</c:if></a>
 										</p>
 										<div class="f_pic">
-											<a href="${ctx}/newsFront/findoneNews?newsId=${news.newsId}" class="general_pic_hover scale"><img src="${ctx}/newsImgUp/${news.coverImgUrl}" alt="" width="255px" height="160px" /></a>
+											<a href="${ctx}/newsFront/findoneNews?newsId=${news.newsId}" class="general_pic_hover scale"><img src="${ctx}/newsImgUp/${news.coverImgUrl}" alt="" width="100%" height="auto" /></a>
 										</div>
 										<p class="text">
 											<c:if test="${not empty news.modFrees}">
 												<c:forEach items="${news.modFrees}" var="modFree">
-		                                			${fn:substring(modFree.modFreeContent,0,40)}<c:if test="${fn:length(modFree.modFreeContent)>40}">...</c:if>
+		                                			${fn:substring(modFree.modFreeContent,0,30)}<c:if test="${fn:length(modFree.modFreeContent)>30}">...</c:if>
 												</c:forEach>
 											</c:if>
 											<c:if test="${not empty news.modBigImgs}">
 												<c:forEach items="${news.modBigImgs}" var="modBigImg" varStatus="status">
 													<c:if test="${status.index eq 0}">
-													${fn:substring(news.bigImgContent,0,40)}<c:if test="${fn:length(news.bigImgContent)>40}">...</c:if>
+													${fn:substring(news.bigImgContent,0,30)}<c:if test="${fn:length(news.bigImgContent)>30}">...</c:if>
 													</c:if>
 												</c:forEach>
 											</c:if>
 											<c:if test="${not empty news.modVedios}">
 												<c:forEach items="${news.modVedios}" var="modVedio">
 											
-											     ${fn:substring(modVedio.modVedioContent,0,40)}<c:if test="${fn:length(modVedio.modVedioContent)>40}">...</c:if>
+											     ${fn:substring(modVedio.modVedioContent,0,30)}<c:if test="${fn:length(modVedio.modVedioContent)>30}">...</c:if>
 												</c:forEach>
 											</c:if>
 											<c:if test="${not empty news.modAudios}">
 												<c:forEach items="${news.modAudios}" var="modAudio">
-											     ${fn:substring(modAudio.modAudioContent,0,40)}<c:if test="${fn:length(modAudio.modAudioContent)>40}">...</c:if>
+											     ${fn:substring(modAudio.modAudioContent,0,30)}<c:if test="${fn:length(modAudio.modAudioContent)>30}">...</c:if>
 												</c:forEach>
 											</c:if>
 											<c:if test="${not empty news.modMixCenters}">
 												<c:forEach items="${news.modMixCenters}" var="modMixCenter">
-											     ${fn:substring(modMixCenter.mMixCenterContentOne,0,40)}<c:if test="${fn:length(modMixCenter.mMixCenterContentOne)>40}">...</c:if>
+											     ${fn:substring(modMixCenter.mMixCenterContentOne,0,30)}<c:if test="${fn:length(modMixCenter.mMixCenterContentOne)>30}">...</c:if>
 												</c:forEach>
 											</c:if>
 											<c:if test="${not empty news.modMixLRs}">
 												<c:forEach items="${news.modMixLRs}" var="modMixLR">
-											      ${fn:substring(modMixLR.mMixLRContentOne,0,40)}<c:if test="${fn:length(modMixLR.mMixLRContentOne)>40}">...</c:if>
+											      ${fn:substring(modMixLR.mMixLRContentOne,0,30)}<c:if test="${fn:length(modMixLR.mMixLRContentOne)>30}">...</c:if>
 												</c:forEach>
 											</c:if>
 											<c:if test="${not empty news.modMixSingles}">
 												<c:forEach items="${news.modMixSingles}" var="modMixSingle">
-											       ${fn:substring(modMixSingle.mMixSingleContentOne,0,40)}<c:if test="${fn:length(modMixSingle.mMixSingleContentOne)>40}">...</c:if>
+											       ${fn:substring(modMixSingle.mMixSingleContentOne,0,30)}<c:if test="${fn:length(modMixSingle.mMixSingleContentOne)>30}">...</c:if>
 												</c:forEach>
 											</c:if>
 										</p>
@@ -280,6 +280,7 @@
 											</div>
 										</div>
 									</article>
+									
 								</c:forEach>
 							</c:if>
 
@@ -296,12 +297,11 @@
 							<div class="clearboth"></div>
 						</div>
 
-						<div class="line_2" style="margin: 24px 0px 35px;"></div>
+						<div class="line_2" style="margin: 35px 15px 15px 0px;"></div>
 
 						<h3 style="font-size: 16px;">温馨提示</h3>
 						<div class="line_4" style="margin: -4px 0px 18px;"></div>
 
-						<div class="block_best_materials">
 							<div class="slider">
 								<div id="best_materials_slider" class="flexslider">
 									<ul class="slides">
@@ -310,10 +310,10 @@
 										<li>
 											<div class="block_best_material_post">
 												<div class="f_pic">
-													<a href="${ctx}/newsFront/findoneNews?newsId=${news.newsId}" class="w_hover"><img src="${ctx}/newsImgUp/${news.coverImgUrl}" alt="" width="184px" height="105px" /><span></span></a>
+													<a href="${ctx}/newsFront/findoneNews?newsId=${news.newsId}" class="w_hover"><img src="${ctx}/newsImgUp/${news.coverImgUrl}" alt="" width="100%" height="115px" /><span></span></a>
 												</div>
 												<p class="title">
-													<a href="${s}/newsFront/findoneNews?newsId=${news.newsId}">${fn:substring(news.newsTitle, 0,25)} <c:if test="${fn:length(news.newsTitle)>25}">...</c:if></a>
+													<a href="${s}/newsFront/findoneNews?newsId=${news.newsId}">${fn:substring(news.newsTitle, 0,10)} <c:if test="${fn:length(news.newsTitle)>12}">...</c:if></a>
 												</p>
 												<div class="info">
 													<div class="date">
@@ -352,7 +352,6 @@
 									});
 								});
 							</script>
-						</div>
 
 						<div class="line_2" style="margin: 20px 0px 0px;"></div>
 

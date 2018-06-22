@@ -57,7 +57,7 @@
 				</div>
 
 				<div class="text">
-					<p class="title"> <a href="${ctx}/newsFront/findoneNews?newsId=${news.newsId}"> ${fn:substring(news.newsTitle, 0,14)} <c:if test="${fn:length(news.newsTitle)>14}">...</c:if></a>
+					<p class="title"> <a href="${ctx}/newsFront/findoneNews?newsId=${news.newsId}"> ${fn:substring(news.newsTitle, 0,20)} <c:if test="${fn:length(news.newsTitle)>14}">...</c:if></a>
 					</p>
 					<div class="date">
 						<p><fmt:formatDate value="${news.publishTime}" pattern="yyyy-MM-dd" /></p>
