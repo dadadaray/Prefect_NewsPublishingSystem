@@ -401,7 +401,7 @@ nav.secondary_menu > ul > li:first-child > a {padding-left:0px;}
 	behavior:url(js/PIE.htc);
 }
 .block_special_topic .type p {font-size:16px; color:#ffffff; font-weight:bold; text-transform:uppercase; line-height:24px;}
-.block_special_topic .title {height:24px; padding-left:17px; overflow:hidden; background:url(images/arrow_13.png) no-repeat #f4f4f4;}
+.block_special_topic .title {width:82%; height:24px; padding-left:17px; overflow:hidden; background:url(images/arrow_13.png) no-repeat #f4f4f4;}
 .block_special_topic .title p {font-size:11px; color:#383838; font-weight:bold; text-transform:uppercase; line-height:24px; white-space:nowrap;}
 .block_special_topic .title a {font-size:16px; color:#383838; font-weight:500; text-transform:uppercase;}
 

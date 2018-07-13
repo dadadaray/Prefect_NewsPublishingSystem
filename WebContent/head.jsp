@@ -111,8 +111,7 @@
 
 							</ul>
 							</li>
-						<li data-content="education"><a>文化</a></li>
-						<li data-content="education"><a>生活</a></li>
+
 
 					</ul>
 				</nav>

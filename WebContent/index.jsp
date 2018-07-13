@@ -9,7 +9,7 @@
 <title>新闻天下</title>
 
 <meta name="keywords" content="" />
-<meta name="description" content=""/>
+<meta name="description" content="" />
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
@@ -73,12 +73,9 @@
 <body>
 	<%
 		if (session.getAttribute("listNewsIndex1") == null || session.getAttribute("listNewsIndex2") == null
-				|| request.getAttribute("YesterdayPage") == null
-				|| session.getAttribute("listNewsIndex3") == null
-				||session.getAttribute("findNewsBigTop") == null
-				||session.getAttribute("hotpoint") == null
-				||session.getAttribute("findNewsBigTop") == null
-				) {
+				|| request.getAttribute("YesterdayPage") == null || session.getAttribute("listNewsIndex3") == null
+				|| session.getAttribute("findNewsBigTop") == null || session.getAttribute("hotpoint") == null
+				|| session.getAttribute("findNewsBigTop") == null) {
 			request.getRequestDispatcher("index").forward(request, response);
 		}
 	%>
@@ -96,11 +93,11 @@
 								<p>最新热点新闻</p>
 							</div>
 							<div class="title">
-							<c:forEach items="${hotpoint}" var="news">
-								<p>
-									<a href="${ctx}/newsFront/findoneNews?newsId=${news.newsId}">${news.newsTitle }</a>
-								</p>
-							</c:forEach>
+								<c:forEach items="${hotpoint}" var="news">
+									<p>
+										<a href="${ctx}/newsFront/findoneNews?newsId=${news.newsId}">${news.newsTitle }</a>
+									</p>
+								</c:forEach>
 							</div>
 						</div>
 						<div class="separator" style="height: 17px;"></div>
@@ -108,38 +105,25 @@
 						<div class="block_home_slider">
 							<div id="home_slider" class="flexslider">
 								<ul class="slides">
-								<c:set var="newsHonorList" value="${sessionScope.listNewsIndex1}"></c:set>
-							      <c:forEach items="${findNewsBigTop}" var="news">
-									<li>
-										<div class="slide">
-											<a href="${ctx}/newsFront/findoneNews?newsId=${news.newsId}"><img src="${ctx}/newsImgUp/${news.coverImgUrl}" alt="" width="63%" height="auto"/></a>
-											<div class="caption">
-												<p class="title">${fn:substring(news.newsTitle, 0,25)} <c:if test="${fn:length(news.newsTitle)>25}">...</c:if></p>
-											
+									<c:set var="newsHonorList" value="${sessionScope.listNewsIndex1}"></c:set>
+									<c:forEach items="${findNewsBigTop}" var="news">
+										<li>
+											<div class="slide">
+												<a href="${ctx}/newsFront/findoneNews?newsId=${news.newsId}"><img src="${ctx}/newsImgUp/${news.coverImgUrl}" alt="" width="63%" height="auto" /></a>
+												<div class="caption">
+													<p class="title">${fn:substring(news.newsTitle, 0,25)}
+														<c:if test="${fn:length(news.newsTitle)>25}">...</c:if>
+													</p>
+
+												</div>
 											</div>
-										</div>
-									</li>
-								</c:forEach>
-
-									
-									
-
-								
+										</li>
+									</c:forEach>
 								</ul>
 							</div>
 
 							<script type="text/javascript">
-								$(function() {
-									$('#home_slider').flexslider({
-										animation : 'slide',
-										controlNav : true,
-										directionNav : true,
-										animationLoop : true,
-										slideshow : false,
-										useCSS : false
-									});
-
-								});
+								
 							</script>
 						</div>
 
@@ -280,7 +264,7 @@
 											</div>
 										</div>
 									</article>
-									
+
 								</c:forEach>
 							</c:if>
 
@@ -302,11 +286,11 @@
 						<h3 style="font-size: 16px;">温馨提示</h3>
 						<div class="line_4" style="margin: -4px 0px 18px;"></div>
 
-							<div class="slider">
-								<div id="best_materials_slider" class="flexslider">
-									<ul class="slides">
+						<div class="slider">
+							<div id="best_materials_slider" class="flexslider">
+								<ul class="slides">
 									<c:set var="newsHonorList" value="${sessionScope.listNewsIndex4}"></c:set>
-							<c:forEach items="${newsHonorList}" var="news">
+									<c:forEach items="${newsHonorList}" var="news">
 										<li>
 											<div class="block_best_material_post">
 												<div class="f_pic">
@@ -317,7 +301,9 @@
 												</p>
 												<div class="info">
 													<div class="date">
-														<p><fmt:formatDate value="${news.publishTime}" pattern="yyyy-MM-dd" /></p>
+														<p>
+															<fmt:formatDate value="${news.publishTime}" pattern="yyyy-MM-dd" />
+														</p>
 													</div>
 													<div class="category">
 														<p>
@@ -327,31 +313,40 @@
 												</div>
 											</div>
 										</li>
-										</c:forEach>
-										
+									</c:forEach>
 
-									
-									</ul>
-								</div>
+
+
+								</ul>
 							</div>
+						</div>
 
-							<script type="text/javascript">
-								$(function() {
-									$('#best_materials_slider').flexslider({
-										animation : 'slide',
-										controlNav : false,
-										directionNav : true,
-										animationLoop : false,
-										slideshow : false,
-										itemWidth : 213,
-										itemMargin : 0,
-										minItems : 1,
-										maxItems : 3,
-										move : 1,
-										useCSS : false
-									});
+						<script type="text/javascript">
+							$(function() {
+								$('#home_slider').flexslider({
+									animation : 'slide', // 图片变换方式
+									controlNav : true,
+									directionNav : true,
+									animationLoop : true,
+									slideshow : true,// 加载页面时是否自动播放
+									useCSS : false,
+									slideshowSpeed:5000,
 								});
-							</script>
+								$('#best_materials_slider').flexslider({
+									animation : 'slide',
+									controlNav : false,
+									directionNav : false,
+									animationLoop : false,
+									slideshow : false,
+									itemWidth : 213,
+									itemMargin : 0,
+									minItems : 1,
+									maxItems : 3,
+									move : 1,
+									useCSS : false
+								});
+							});
+						</script>
 
 						<div class="line_2" style="margin: 20px 0px 0px;"></div>
 
